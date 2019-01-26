@@ -19,7 +19,7 @@ module.exports = function(app) {
 				if (o){
 					AM.autoLogin(o.user, o.pass, function(o){
 						req.session.user = o;
-						res.redirect('https://easy3way.herokuapp.com/');
+						res.redirect('https://eazyway.herokuapp.com/');
 					});
 				}	else{
 					res.render('login', { title: 'Hello - Please Login To Your Account' });
@@ -64,7 +64,7 @@ module.exports = function(app) {
 				countries : CT,
 				udata : req.session.user
 			});*/
-			res.redirect('https://easy3way.herokuapp.com/');
+			res.redirect('https://eazyway.herokuapp.com/');
 		}
 	});
 	
@@ -86,7 +86,7 @@ module.exports = function(app) {
 					res.status(200).send('ok');
 				}
 			});*/
-			res.redirect('https://easy3way.herokuapp.com/');
+			res.redirect('https://eazyway.herokuapp.com/');
 		}
 	});
 
