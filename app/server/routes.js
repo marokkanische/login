@@ -19,7 +19,7 @@ module.exports = function(app) {
 				if (o){
 					AM.autoLogin(o.user, o.pass, function(o){
 						req.session.user = o;
-						return res.redirect('https://easy3way.herokuapp.com/');
+						res.redirect('https://easy3way.herokuapp.com/');
 					});
 				}	else{
 					res.render('login', { title: 'Hello - Please Login To Your Account' });
@@ -59,11 +59,12 @@ module.exports = function(app) {
 		if (req.session.user == null){
 			res.redirect('/');
 		}	else{
-			res.render('home', {
+			/*res.render('home', {
 				title : 'Control Panel',
 				countries : CT,
 				udata : req.session.user
-			});
+			});*/
+			res.redirect('https://easy3way.herokuapp.com/');
 		}
 	});
 	
@@ -71,7 +72,7 @@ module.exports = function(app) {
 		if (req.session.user == null){
 			res.redirect('/');
 		}	else{
-			AM.updateAccount({
+			/*AM.updateAccount({
 				id		: req.session.user._id,
 				name	: req.body['name'],
 				email	: req.body['email'],
@@ -84,7 +85,8 @@ module.exports = function(app) {
 					req.session.user = o.value;
 					res.status(200).send('ok');
 				}
-			});
+			});*/
+			res.redirect('https://easy3way.herokuapp.com/');
 		}
 	});
 
