@@ -19,7 +19,7 @@ module.exports = function(app) {
 				if (o){
 					AM.autoLogin(o.user, o.pass, function(o){
 						req.session.user = o;
-						res.redirect('https://easy3way.herokuapp.com/');
+						return res.redirect('https://easy3way.herokuapp.com/');
 					});
 				}	else{
 					res.render('login', { title: 'Hello - Please Login To Your Account' });
